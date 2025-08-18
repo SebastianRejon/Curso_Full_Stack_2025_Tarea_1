@@ -3,6 +3,10 @@
     --fondoBlanco:#fffbf4;
     --fondoBoton: #12336a;  
     --grisMAltoC:  #4d4d4d;
+    --amarilloMAltoC: #f5ff62;
+    --grisBKFormMAltoC: #161616dd;
+    --grisInputMAltoC: #424040;
+    --naranja: #ffc64b;
 }
 *{
     font-family: Arial, Helvetica, sans-serif;
@@ -78,6 +82,9 @@ body{
     font-weight: bold; 
 }
 /*MODO ALTO CONTRASTE - CAMBIO DE COLORES POR CHECKBOX*/
+ #touch {
+      display: none;
+    }
  /* Botón de modo */
  .buttom{
     position:absolute;
@@ -90,7 +97,6 @@ body{
       height: 30px;
       margin-bottom: 1rem;
  }
- /*desplazamiento boton para parte siguiente, efecto visual*/
  .buttom::after{
     content: "";
       position: absolute;
@@ -103,3 +109,48 @@ body{
       transition: transform 0.3s ease;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
  }
+ /* Cuando está marcado */
+    #touch:checked + .buttom {
+      background:var(--grisMAltoC);
+    }
+
+    #touch:checked + .buttom::after {
+      transform: translateX(30px);
+    }
+
+#touch:checked ~ .container {
+    background-color: var(--grisBKFormMAltoC);
+}
+#touch:checked ~ .container .form_input{
+    background-color: var(--grisInputMAltoC);
+    border-bottom: 2px solid  var(--amarilloMAltoC);
+    color:var(--fondoBlanco)
+}
+
+#touch:checked ~ .container .form_input::placeholder{
+    color:var(--fondoBlanco)
+}
+
+#touch:checked ~ .container .form_input_country{
+    background-color: var(--grisInputMAltoC);
+    border-bottom: 2px solid  var(--amarilloMAltoC);
+    color:var(--fondoBlanco)
+}
+#touch:checked ~ .container .hero{
+    background-color: var(--naranja);
+    color:var(--grisBKFormMAltoC);
+}
+#touch:checked ~ .container .form_buttom{
+    background-color: var(--naranja);
+    color:var(--grisBKFormMAltoC);
+}
+#touch:checked ~ .container .form_buttom:hover{
+    background-color: var(--grisBKFormMAltoC);
+    border: 2px solid var(--naranja);
+    color: var(--naranja);
+    font-weight: bold; 
+}
+/*CLASES PARA LAS ALERTAS DE ERRORES DE CARGA*/
+.alert{
+    display: none;
+}

@@ -1,0 +1,5 @@
+Para sombras css:
+https://cssgenerator.org/
+
+Para paletas de colores:
+https://paletadecolores.org/
