@@ -7,6 +7,7 @@
     --grisBKFormMAltoC: #161616dd;
     --grisInputMAltoC: #424040;
     --naranja: #ffc64b;
+    --alertaError: #fd1313;
 }
 *{
     font-family: Arial, Helvetica, sans-serif;
@@ -151,6 +152,7 @@ body{
     font-weight: bold; 
 }
 /*CLASES PARA LAS ALERTAS DE ERRORES DE CARGA*/
-.alert{
-    display: none;
+.alert p{
+    color:var(--alertaError);
+    font-weight: bold;
 }
