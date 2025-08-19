@@ -4,7 +4,7 @@ let btn = document.getElementById("form_buttom").addEventListener("click", valid
 function validate() {
   let inputName = document.getElementById("name");
   let inputSurname = document.getElementById("surname");
-  let inputEmail = document.getElementById("email");
+  let inputEmail = document.getElementById("mail");
   let inputBorn = document.getElementById("born");
   
   /*
@@ -53,14 +53,16 @@ function validate() {
   messajeErrorMail.innerHTML="";
   itemMail=document.createElement("p");
 
+  console.log(inputEmail.value);
   if (inputEmail.value===""){
+    
     itemMail.textContent="Debe colocar un correo electronico.";  
     messajeErrorMail.appendChild(itemMail); 
   }
-  let exp=/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-  if (exp.test(inputEmail.value)){
-    itemMail.textContent="Formato incorrecto de correo electronico.";  
-    messajeErrorMail.appendChild(itemMail); 
-  } 
-  // 
+  // let exp=/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  // if (exp.test(inputEmail.value)){
+  //   itemMail.textContent="Formato incorrecto de correo electronico.";  
+  //   messajeErrorMail.appendChild(itemMail); 
+  // } 
+  
 }
